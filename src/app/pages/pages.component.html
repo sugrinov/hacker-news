@@ -1,0 +1,16 @@
+<div class="btn-container">
+    <button class="btn previous" (click)="getPrevious()" [disabled]="currentPage === 0">&lt; Previous</button>
+    <button *ngIf="isMobile; else notMobile" class="btn">{{currentPage + 1}}</button>
+    <ng-template #notMobile>
+      <button
+      *ngFor="let page of getPages()"
+      class="btn"
+      [class.selected]="currentPage === page"
+      (click)="goToPage(page)"
+      >
+        {{page+1}}
+      </button>
+    </ng-template>
+    <button class="btn next" (click)="getNext()" [disabled]="currentPage === pages[pages.length - 1]">Next &gt;</button>
+
+  </div>

@@ -1,0 +1,24 @@
+<div *ngIf="story && !story.deleted">
+  <div class="story">
+    <div class="story-title">
+        <a *ngIf="story.url; else noUrl" href={{story.url}} target="_blank" >
+          {{story.title}}
+          <span *ngIf="story.url">({{story.urlText}})</span>
+        </a>
+        <ng-template #noUrl>
+          <a routerLink="/story/{{story.id}}">{{story.title}}</a>
+        </ng-template>
+      </div>
+    <div class="info-container">
+      <div class="points">{{story.score}} points</div>
+      <a class="author" routerLink="/user/{{story.by}}">by {{story.by}},</a>
+      <div class="timestamp">{{ (story.time | amFromUnix ) | amTimeAgo }}</div>
+      | <a routerLink="/story/{{story.id}}" class="comment-count">Comments: {{story.descendants}}</a>
+    </div>
+
+    <div *ngIf="showStoryText" [innerHTML]="story.text" class="story-text"></div>
+  </div>
+  <div *ngIf="showStoryComments && story.kids">
+      <app-comments *ngFor="let comment of story.kids" [commentID]="comment"></app-comments>
+    </div>
+</div>
