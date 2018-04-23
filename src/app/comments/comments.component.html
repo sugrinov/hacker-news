@@ -1,0 +1,15 @@
+<div *ngIf="comment;else loading" class="comment" [class.has-children]="shouldShowChildComments">
+  <div class="comment-info">
+    <div class="comment-meta">{{comment.by}} {{comment.time}}</div>
+    <div class="comment-text" [innerHTML]="comment.text"></div>
+  </div>
+  <div *ngIf="comment.kids">
+    <div *ngIf="shouldShowChildComments;else loadMore" class="child-comments">
+      <app-comments *ngFor="let id of comment.kids" [commentID]="id"></app-comments>
+    </div>
+    <ng-template #loadMore>
+      <button class="btn load-more" (click)="showChildComments()">Load More</button>
+    </ng-template>
+  </div>
+</div>
+<div *ngIf="commentID && !comment" #loading class="loading"></div>
