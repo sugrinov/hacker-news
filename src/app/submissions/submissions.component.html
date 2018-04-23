@@ -1,0 +1,8 @@
+<div>
+  <h1>Page {{currentPage + 1}}</h1>
+  <button class="btn previous" (click)="getPrev()" [disabled]="noPrev">&lt; Previous</button>
+  <button class="btn next" (click)="getNext()" [disabled]="noNext">Next &gt;</button>
+  <div *ngFor="let submission of submissions[currentPage]">
+    <app-item [itemId]="submission"></app-item>
+  </div>
+</div>
