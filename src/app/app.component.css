@@ -1,0 +1,25 @@
+nav {
+    height: 60px;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 20px;
+    font-family: "Open Sans", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+nav > a {
+    display: inline-block;
+    color: gray;
+    text-decoration: none;
+    padding: 23px 8px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 -2px;
+    vertical-align: middle;
+    transition: all 1s ease;
+}
+
+nav > a:hover {
+    color: #333;
+}
+
+.active-link {
+    color: #333;
+}
