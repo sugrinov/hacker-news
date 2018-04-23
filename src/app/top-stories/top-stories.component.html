@@ -1,0 +1,4 @@
+<div *ngIf="topStories">
+  <app-pages [pages]="getPages()" [currentPage]="currentPage"></app-pages>
+  <app-item itemId="{{storyID}}" *ngFor="let storyID of getTopStoriesValues()"></app-item>
+</div>
