@@ -1,0 +1,12 @@
+<div *ngIf="user" class="user-card">
+  <div class="username">user: {{user.id}}</div>
+  <div class="created-on">created: {{ ( user.created | amFromUnix ) | date }}</div>
+  <div class="karma">{{user.karma}}</div>
+</div>
+<button class="btn submission" (click)="toggleSubmissions()">submissions
+  <span class="oi" [ngClass]="showSubmissions ? 'oi-chevron-top' : 'oi-chevron-bottom'"></span>
+</button>
+
+<div *ngIf="showSubmissions">
+  <app-submissions [submissions]="user.submitted"></app-submissions>
+</div>

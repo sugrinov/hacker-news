@@ -1,0 +1,26 @@
+.user-card {
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 16px;
+    color: #444;
+
+    display: flex;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    width: 20%;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 250px;
+    padding: 15px;
+    font-weight: 600;
+    margin: 15px auto;
+}
+
+
+.submission {
+    width: 100%;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    height: 50px;
+    font-size: 14px;
+    color: white;
+    border: none;
+    background-color: rgb(241, 101, 79);
+}
