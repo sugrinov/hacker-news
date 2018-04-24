@@ -8,8 +8,8 @@ import { RESULTS_PER_PAGE } from '../constants/constants';
 })
 export class SubmissionsComponent implements OnInit {
 
-  @Input() submissions
-  
+  @Input() submissions;
+
   currentPage = 0;
   noNext = false;
   noPrev = true;
@@ -28,7 +28,7 @@ export class SubmissionsComponent implements OnInit {
     }, {});
   }
 
-  getNext() {
+  getNext(): number[] {
     this.currentPage++;
 
     if (!this.hasNext()) {
@@ -38,29 +38,29 @@ export class SubmissionsComponent implements OnInit {
     if (this.hasPrev()) {
       this.noPrev = false;
     }
-    
+
     return this.submissions[this.currentPage];
   }
 
-  getPrev() {
+  getPrev(): number[] {
     this.currentPage--;
 
-    if(!this.hasPrev()) {
+    if (!this.hasPrev()) {
       this.noPrev = true;
     }
 
     if (this.hasNext()) {
       this.noNext = false;
     }
-    
+
     return this.submissions[this.currentPage];
   }
 
-  hasNext() {
+  hasNext(): boolean {
     return !!this.submissions[this.currentPage + 1];
   }
 
-  hasPrev() {
+  hasPrev(): boolean {
     return !!this.submissions[this.currentPage - 1];
   }
 }

@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { TopStory } from './top-stories/top-story';
+import 'rxjs/operator/catch';
+
 
 @Injectable()
 export class ItemService {
