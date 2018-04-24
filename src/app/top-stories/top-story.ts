@@ -1,4 +1,4 @@
-class TopStory {
+export class TopStory {
     by: string;
     descendants: number;
     id: number;

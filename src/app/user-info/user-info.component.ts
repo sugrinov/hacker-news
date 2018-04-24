@@ -11,7 +11,7 @@ export class UserInfoComponent implements OnInit {
 
   user: User;
   showSubmissions = false;
-  currentPage;
+  currentPage: number;
 
   constructor(
     private userService: UserService,
@@ -31,7 +31,7 @@ export class UserInfoComponent implements OnInit {
     const storyType = this.route.snapshot.routeConfig.path;
   }
 
-  toggleSubmissions() {
+  toggleSubmissions(): void {
     this.showSubmissions = !this.showSubmissions;
   }
 }

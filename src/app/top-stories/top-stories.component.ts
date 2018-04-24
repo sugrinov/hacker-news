@@ -3,8 +3,8 @@ import { TOP_STORIES } from './top-stories-mock';
 import { TopStoriesService } from '../top-stories.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { callLifecycleHooksChildrenFirst } from '@angular/core/src/view/provider';
-// import { RESULTS_PER_PAGE } from '../constants/constants';
-const RESULTS_PER_PAGE = 10;
+import { RESULTS_PER_PAGE } from '../constants/constants';
+
 @Component({
   selector: 'app-top-stories',
   templateUrl: './top-stories.component.html',

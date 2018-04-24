@@ -14,11 +14,10 @@ import { CommonStoriesService } from './common-stories.service';
 import { PagesComponent } from './pages/pages.component';
 import { CommentsComponent } from './comments/comments.component';
 import { CommentService } from './comment.service';
-import { StoryComponent } from './story/story.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { UserService } from './user.service';
 import { SubmissionsComponent } from './submissions/submissions.component';
-import { SubmissionsService } from './submissions.service';
+import { ErrorHandlingService } from './error-handling.service';
 
 
 @NgModule({
@@ -29,7 +28,6 @@ import { SubmissionsService } from './submissions.service';
     CommonStoriesComponent,
     PagesComponent,
     CommentsComponent,
-    StoryComponent,
     UserInfoComponent,
     SubmissionsComponent
   ],
@@ -45,7 +43,7 @@ import { SubmissionsService } from './submissions.service';
     ItemService,
     CommentService,
     UserService,
-    SubmissionsService
+    ErrorHandlingService
   ],
   bootstrap: [AppComponent]
 })

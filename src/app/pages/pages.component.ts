@@ -33,15 +33,15 @@ export class PagesComponent implements OnInit {
     this.pages = this.pages.map(page => Number(page));
   }
 
-  getNext() {
+  getNext(): void {
     this.router.navigate([this.route.snapshot.routeConfig.path], { queryParams: { page: this.currentPage + 1 } });
   }
 
-  getPrevious() {
+  getPrevious(): void {
     this.router.navigate([this.route.snapshot.routeConfig.path], { queryParams: { page: this.currentPage - 1 } });
   }
 
-  getPages() {
+  getPages(): number[] {
     if (this.pages.length <= 10) {
       return this.pages;
     }
@@ -56,7 +56,7 @@ export class PagesComponent implements OnInit {
     return this.pages.slice(firstIdx, lastIdx + 1);
   }
 
-  goToPage(page) {
+  goToPage(page): void {
     this.router.navigate([this.route.snapshot.routeConfig.path], { queryParams: { page } });
   }
 

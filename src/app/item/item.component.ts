@@ -19,14 +19,14 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
     this.itemService.fetchItem(this.itemId)
-      .map(story => {
+      .map((story: TopStory) => {
         const urlText = story.url && story.url.match(/https?:\/\/(.?.\w+\.\w+)/i)[1];
         return ({
           ...story,
           urlText
         });
       })
-      .subscribe(item => this.story = item);
+      .subscribe((item: TopStory) => this.story = item);
   }
 }
 

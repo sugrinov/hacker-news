@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommentService } from '../comment.service';
+import { Comment } from './comment';
 
 @Component({
   selector: 'app-comments',
@@ -11,13 +12,13 @@ export class CommentsComponent implements OnInit {
   @Input() commentID: number;
 
   shouldShowChildComments = false;
-  comment: Object;
+  comment: Comment;
 
   constructor(private commentService: CommentService) { }
 
   ngOnInit() {
     this.commentService.getComment(this.commentID)
-        .subscribe(comment => this.comment = comment);
+        .subscribe((comment: Comment) => this.comment = comment);
   }
 
   showChildComments() {
