@@ -1,3 +1,5 @@
+import { TopStory } from './top-story';
+
 export const TOP_STORIES: TopStory[] = [
     {
         by: 'randomwalker',
