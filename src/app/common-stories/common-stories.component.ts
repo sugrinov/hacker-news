@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CommonStoriesService } from '../common-stories.service';
-// import { RESULTS_PER_PAGE } from '../constants';
-const RESULTS_PER_PAGE = 10;
+import { RESULTS_PER_PAGE } from '../constants/constants';
+
 @Component({
   selector: 'app-common-stories',
   templateUrl: './common-stories.component.html',
@@ -28,7 +28,7 @@ export class CommonStoriesComponent implements OnInit {
 
     const storyType = this.route.snapshot.routeConfig.path;
     this.commonStoriesService.getCommonStories(storyType)
-      .map(allStories => {
+      .map((allStories: number[]) => {
         const commonStoriesPageView = allStories.reduce((acc, curr, idx) => {
           const currentPage = Math.floor(idx / RESULTS_PER_PAGE);
           const currentStories = acc[currentPage] ? acc[currentPage]  : [];
@@ -40,14 +40,14 @@ export class CommonStoriesComponent implements OnInit {
         }, {});
         return commonStoriesPageView;
       })
-      .subscribe(item => this.stories = item);
+      .subscribe((stories: Object) => this.stories = stories);
   }
 
-  getCommonStoriesValues() {
+  getCommonStoriesValues(): number[] {
     return this.stories ? this.stories[this.currentPage] : [];
   }
 
-  getPages() {
+  getPages(): string[] {
     return Object.keys(this.stories);
   }
 }
