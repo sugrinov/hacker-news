@@ -21,7 +21,8 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
     this.itemService.fetchItem(this.itemId)
       .map((story: TopStory) => {
-        const urlText = story.url && story.url.match(/https?:\/\/(.?.\w+\.\w+)/i)[1];
+        const constructedURL = story.url && new URL(story.url);
+        const urlText = constructedURL && constructedURL.hostname.replace('www.', '');
         return ({
           ...story,
           urlText

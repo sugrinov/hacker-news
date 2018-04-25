@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MomentModule } from 'angular2-moment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToasterModule, ToasterService } from 'angular2-toaster';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -19,6 +21,7 @@ import { UserService } from './user.service';
 import { SubmissionsComponent } from './submissions/submissions.component';
 import { ErrorHandlingService } from './error-handling.service';
 import { StoryComponent } from './story/story.component';
+import { RouteGuardService } from './app-routing/route-guard.service';
 
 
 @NgModule({
@@ -37,7 +40,9 @@ import { StoryComponent } from './story/story.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MomentModule
+    MomentModule,
+    BrowserAnimationsModule,
+    ToasterModule.forRoot()
   ],
   providers: [
     TopStoriesService,
@@ -45,7 +50,9 @@ import { StoryComponent } from './story/story.component';
     ItemService,
     CommentService,
     UserService,
-    ErrorHandlingService
+    ErrorHandlingService,
+    RouteGuardService,
+    ToasterService
   ],
   bootstrap: [AppComponent]
 })

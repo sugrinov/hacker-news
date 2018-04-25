@@ -23,3 +23,14 @@ nav > a:hover {
 .active-link {
     color: #333;
 }
+.error-message {
+    font-family: "Open Sans", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: absolute;
+    right: 0;
+    width: 250px;
+    padding: 15px 25px 10px 10px;
+    background-color: rgba(100, 0, 0, 0.5);
+    border-radius: 5px;
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, .3);
+}
