@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { TopStoriesComponent } from './top-stories/top-stories.component';
 import { TopStoriesService } from './top-stories.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ItemComponent } from './item/item.component';
 import { ItemService } from './item.service';
 import { CommonStoriesComponent } from './common-stories/common-stories.component';
@@ -22,6 +22,8 @@ import { SubmissionsComponent } from './submissions/submissions.component';
 import { ErrorHandlingService } from './error-handling.service';
 import { StoryComponent } from './story/story.component';
 import { RouteGuardService } from './app-routing/route-guard.service';
+import { HttpCacheService } from './http-cache.service';
+import { CacheInterceptor } from './cache.interceptor';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { RouteGuardService } from './app-routing/route-guard.service';
     UserService,
     ErrorHandlingService,
     RouteGuardService,
-    ToasterService
+    ToasterService,
+    HttpCacheService,
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
