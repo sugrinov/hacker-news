@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ItemService } from '../item.service';
+import { TopStory } from '../top-stories/top-story';
 
 @Component({
   selector: 'app-item',

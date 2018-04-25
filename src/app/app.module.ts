@@ -18,6 +18,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
 import { UserService } from './user.service';
 import { SubmissionsComponent } from './submissions/submissions.component';
 import { ErrorHandlingService } from './error-handling.service';
+import { StoryComponent } from './story/story.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ErrorHandlingService } from './error-handling.service';
     PagesComponent,
     CommentsComponent,
     UserInfoComponent,
-    SubmissionsComponent
+    SubmissionsComponent,
+    StoryComponent
   ],
   imports: [
     BrowserModule,
