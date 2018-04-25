@@ -16,7 +16,6 @@ export class RouteGuardService implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot) {
     const paramName = route.url[0].path;
     const param = route.url[1].path;
-    console.log(paramName);
 
     const isValidUserParam = paramName === 'user' && isNaN(+param);
     if (isValidUserParam) {
