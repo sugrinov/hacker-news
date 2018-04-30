@@ -8,7 +8,7 @@ import { RESULTS_PER_PAGE } from '../constants/constants';
 })
 export class SubmissionsComponent implements OnInit {
 
-  @Input() submissions;
+  @Input() submissions = [];
 
   currentPage = 0;
   noNext = false;

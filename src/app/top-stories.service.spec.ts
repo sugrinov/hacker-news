@@ -1,11 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { TopStoriesService } from './top-stories.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ErrorHandlingService } from './error-handling.service';
 
 describe('TopStoriesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TopStoriesService]
+      imports: [ HttpClientTestingModule ],
+      providers: [ TopStoriesService, ErrorHandlingService ]
     });
   });
 
