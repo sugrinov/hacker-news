@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubmissionsComponent } from './submissions.component';
+import { Component, Input } from '@angular/core';
+import { MockItemComponent } from '../../testing/MockItemComponent';
 
 describe('SubmissionsComponent', () => {
   let component: SubmissionsComponent;
@@ -8,7 +10,7 @@ describe('SubmissionsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SubmissionsComponent ]
+      declarations: [ SubmissionsComponent, MockItemComponent ]
     })
     .compileComponents();
   }));

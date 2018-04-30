@@ -44,7 +44,7 @@ import { CacheInterceptor } from './cache.interceptor';
     HttpClientModule,
     MomentModule,
     BrowserAnimationsModule,
-    ToasterModule.forRoot()
+    ToasterModule
   ],
   providers: [
     TopStoriesService,
