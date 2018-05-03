@@ -21,8 +21,6 @@ export class CacheInterceptor implements HttpInterceptor {
 
     constructor(private cacheService: HttpCacheService) {}
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log(req);
-
         if (this.ignoreUrls[req.url] || this.ignoreUrls[req.url.substring(0, req.url.search('/user/'))]) {
             return next.handle(req);
         }

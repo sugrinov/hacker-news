@@ -28,9 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    console.log('can deb');
     this.subscription = this.errorHandlingService.erorrMessage$.subscribe((errorMsg: ErrorMessage) => {
-      console.log('init toastr');
       const toast: Toast = {
         type: 'error',
         title: errorMsg.errorTitle,
