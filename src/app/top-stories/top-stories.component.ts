@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TOP_STORIES } from './top-stories-mock';
 import { TopStoriesService } from '../top-stories.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { callLifecycleHooksChildrenFirst } from '@angular/core/src/view/provider';

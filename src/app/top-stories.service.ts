@@ -4,7 +4,6 @@ import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/map';
 import { mergeMap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
-import { TOP_STORIES } from './top-stories/top-stories-mock';
 import { ErrorHandlingService } from './error-handling.service';
 
 @Injectable()
